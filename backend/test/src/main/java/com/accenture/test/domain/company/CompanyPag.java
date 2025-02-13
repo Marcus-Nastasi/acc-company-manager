@@ -4,6 +4,14 @@ import java.io.Serial;
 import java.io.Serializable;
 import java.util.List;
 
+/**
+ *
+ * The Company paginated entity.
+ *
+ * @author Marcus Nastasi
+ * @version 1.0.1
+ * @since 2024
+ */
 public class CompanyPag implements Serializable {
 
     @Serial

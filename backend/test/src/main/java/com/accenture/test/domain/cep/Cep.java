@@ -3,6 +3,14 @@ package com.accenture.test.domain.cep;
 import java.io.Serial;
 import java.io.Serializable;
 
+/**
+ *
+ * The CEP entity.
+ *
+ * @author Marcus Nastasi
+ * @version 1.0.1
+ * @since 2024
+ */
 public class Cep implements Serializable {
 
     @Serial

@@ -9,6 +9,14 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
+/**
+ *
+ * The Supplier entity.
+ *
+ * @author Marcus Nastasi
+ * @version 1.0.1
+ * @since 2024
+ */
 public class Supplier implements Serializable {
 
     @Serial

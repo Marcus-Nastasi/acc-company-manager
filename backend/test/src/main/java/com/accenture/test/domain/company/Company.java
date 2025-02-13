@@ -8,6 +8,14 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
+/**
+ *
+ * The Company entity.
+ *
+ * @author Marcus Nastasi
+ * @version 1.0.1
+ * @since 2024
+ */
 public class Company implements Serializable {
 
     @Serial
