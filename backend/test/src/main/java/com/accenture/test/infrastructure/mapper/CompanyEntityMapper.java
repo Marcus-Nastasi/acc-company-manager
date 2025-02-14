@@ -7,6 +7,14 @@ import com.accenture.test.infrastructure.entity.SupplierEntity;
 
 import java.util.ArrayList;
 
+/**
+ *
+ * The company entity mapper.
+ *
+ * @author Marcus Nastasi
+ * @version 1.0.1
+ * @since 2024
+ */
 public class CompanyEntityMapper {
 
     public Company mapFromEntity(CompanyEntity companyEntity) {

@@ -8,6 +8,14 @@ import com.accenture.test.infrastructure.mapper.SupplierEntityMapper;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+/**
+ *
+ * The supplier configuration.
+ *
+ * @author Marcus Nastasi
+ * @version 1.0.1
+ * @since 2024
+ */
 @Configuration
 public class SupplierConfiguration {
 

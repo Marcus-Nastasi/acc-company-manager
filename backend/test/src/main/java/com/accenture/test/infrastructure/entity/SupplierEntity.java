@@ -11,6 +11,14 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
+/**
+ *
+ * The supplier JPA entity.
+ *
+ * @author Marcus Nastasi
+ * @version 1.0.1
+ * @since 2024
+ */
 @Entity
 @Table(name = "supplier")
 @Setter
@@ -18,23 +26,32 @@ import java.util.UUID;
 @AllArgsConstructor
 @NoArgsConstructor
 public class SupplierEntity {
+
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
+
     @Column(unique = true)
     private String cnpj_cpf;
+
     @Column
     private String rg;
+
     @Column
     private LocalDate birth;
+
     @Column
     private String name;
+
     @Column
     private String email;
+
     @Column
     private String cep;
+
     @Column
     private boolean e_pf;
+
     @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(
         name = "supplier_company",

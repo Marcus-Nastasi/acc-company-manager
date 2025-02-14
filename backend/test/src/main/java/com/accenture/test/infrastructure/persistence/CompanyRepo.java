@@ -10,6 +10,14 @@ import org.springframework.stereotype.Repository;
 
 import java.util.UUID;
 
+/**
+ *
+ * The company JPA repository.
+ *
+ * @author Marcus Nastasi
+ * @version 1.0.1
+ * @since 2024
+ */
 @Repository
 public interface CompanyRepo extends JpaRepository<CompanyEntity, UUID> {
 

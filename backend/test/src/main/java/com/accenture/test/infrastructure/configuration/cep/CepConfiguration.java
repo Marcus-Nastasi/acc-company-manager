@@ -6,6 +6,14 @@ import com.accenture.test.infrastructure.gateway.cep.CepRepoGateway;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+/**
+ *
+ * The cep configuration.
+ *
+ * @author Marcus Nastasi
+ * @version 1.0.1
+ * @since 2024
+ */
 @Configuration
 public class CepConfiguration {
 

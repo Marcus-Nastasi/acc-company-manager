@@ -2,6 +2,14 @@ package com.accenture.test.infrastructure.exception;
 
 import java.io.Serial;
 
+/**
+ *
+ * The infrastructure exception.
+ *
+ * @author Marcus Nastasi
+ * @version 1.0.1
+ * @since 2024
+ */
 public class InfraException extends RuntimeException {
 
     @Serial

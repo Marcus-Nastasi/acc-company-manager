@@ -7,6 +7,14 @@ import com.accenture.test.infrastructure.entity.SupplierEntity;
 
 import java.util.ArrayList;
 
+/**
+ *
+ * The supplier entity mapper.
+ *
+ * @author Marcus Nastasi
+ * @version 1.0.1
+ * @since 2024
+ */
 public class SupplierEntityMapper {
 
     public Supplier mapFromEntity(SupplierEntity supplier) {
