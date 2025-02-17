@@ -23,6 +23,7 @@ public interface SupplierGateway {
      * @param size the size of search.
      * @param name the name filter.
      * @param cnpj_cpf the CNPJ or CPF.
+     *
      * @return return a supplier list paginated.
      */
     SupplierPag getAll(int page, int size, String name, String cnpj_cpf);
@@ -32,6 +33,7 @@ public interface SupplierGateway {
      * This function should allow to get a single supplier.
      *
      * @param id the supplier id.
+     *
      * @return the supplier entity object.
      */
     Supplier get(UUID id);
@@ -41,6 +43,7 @@ public interface SupplierGateway {
      * This function should allow to save data on database.
      *
      * @param supplier the supplier entity object to be saved.
+     *
      * @return the registre saved.
      */
     Supplier save(Supplier supplier);
@@ -50,6 +53,7 @@ public interface SupplierGateway {
      * This function should allow to delete a supplier registre on database.
      *
      * @param id the supplier id.
+     *
      * @return the supplier deleted.
      */
     Supplier delete(UUID id);

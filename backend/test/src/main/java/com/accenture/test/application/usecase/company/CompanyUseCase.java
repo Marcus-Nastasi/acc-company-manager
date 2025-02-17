@@ -40,6 +40,7 @@ public class CompanyUseCase {
      * @param name the name filter.
      * @param cnpj cnpj filter.
      * @param cep cep filter.
+     *
      * @return return a company list paginated.
      */
     public CompanyPag getAll(int page, int size, String name, String cnpj, String cep) {
@@ -51,6 +52,7 @@ public class CompanyUseCase {
      * This function allows to get a single company.
      *
      * @param id the company id.
+     *
      * @return the company entity object.
      */
     public Company get(UUID id) {
@@ -62,6 +64,7 @@ public class CompanyUseCase {
      * This function allows to save new data on database.
      *
      * @param data the company entity object to be saved.
+     *
      * @return the registre saved.
      */
     public Company register(Company data) {
@@ -74,6 +77,7 @@ public class CompanyUseCase {
      *
      * @param id the company id.
      * @param data the company entity object to update.
+     *
      * @return the registre updated.
      */
     public Company update(UUID id, Company data) {
@@ -89,6 +93,7 @@ public class CompanyUseCase {
      * This function allows to delete a company registre on database.
      *
      * @param id the company id.
+     *
      * @return the company deleted.
      */
     public Company delete(UUID id) {
@@ -101,6 +106,7 @@ public class CompanyUseCase {
      *
      * @param id_supplier supplier id.
      * @param id company id.
+     *
      * @return the company.
      */
     public Company associateSupplier(UUID id_supplier, UUID id) {
@@ -119,6 +125,7 @@ public class CompanyUseCase {
      *
      * @param supplier_id supplier id.
      * @param company_id company id.
+     *
      * @return the company.
      */
     public Company disassociateSupplier(UUID supplier_id, UUID company_id) {
@@ -130,9 +137,10 @@ public class CompanyUseCase {
 
     /**
      *
-     * This function allows to check if the CEP is from Paraná.
+     * This function allows to check if the postal code is from Paraná.
      *
      * @param cep the CEP string.
+     *
      * @return a boolean indicating if is from Paraná or not.
      */
     public boolean isPr(String cep) {

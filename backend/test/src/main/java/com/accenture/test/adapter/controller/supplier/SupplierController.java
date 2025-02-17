@@ -103,7 +103,10 @@ public class SupplierController {
     @PostMapping(value = "/registrar")
     @CacheEvict(value = "supplier", allEntries = true)
     @ResponseStatus(HttpStatus.CREATED)
-    @Operation(summary = "Register new supplier", description = "In this route you can register a new supplier")
+    @Operation(
+        summary = "Register new supplier",
+        description = "In this route you can register a new supplier"
+    )
     @ApiResponse(responseCode = "201", description = "Returning data from the created supplier")
     public ResponseEntity<SupplierResponseDto> register(@RequestBody @Valid SupplierRequestDto data) {
         Supplier supplier = supplierUseCase.register(supplierDtoMapper.mapFromRequest(data));
@@ -120,7 +123,10 @@ public class SupplierController {
      * @return the supplier updated.
      */
     @PatchMapping(value = "/atualizar/{id}")
-    @CacheEvict(value = "supplier", allEntries = true)
+    @CacheEvict(
+        value = "supplier",
+        allEntries = true
+    )
     @ResponseStatus(HttpStatus.OK)
     @Operation(summary = "Update supplier data", description = "In this route you can update a supplier's data")
     @ApiResponse(responseCode = "200", description = "Returning updated supplier data")
@@ -140,7 +146,10 @@ public class SupplierController {
      * @return the supplier deleted.
      */
     @DeleteMapping(value = "/deletar/{id}")
-    @CacheEvict(value = "supplier", allEntries = true)
+    @CacheEvict(
+        value = "supplier",
+        allEntries = true
+    )
     @ResponseStatus(HttpStatus.OK)
     @Operation(summary = "Delete a supplier", description = "In this route you can delete a supplier's data")
     @ApiResponse(responseCode = "200", description = "Returning deleted supplier data")

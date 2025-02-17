@@ -15,6 +15,12 @@ import org.springframework.web.servlet.config.annotation.DelegatingWebMvcConfigu
 @Configuration
 public class SecurityConfiguration extends DelegatingWebMvcConfiguration {
 
+    /**
+     *
+     * Overriding the cors mapping to allow http requests from front-end ports.
+     *
+     * @param registry the cors registry.
+     */
     @Override
     protected void addCorsMappings(CorsRegistry registry) {
         registry.addMapping("/**")

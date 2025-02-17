@@ -4,7 +4,7 @@ import com.accenture.test.domain.cep.Cep;
 
 /**
  *
- * The Cep interface.
+ * The postal code interface.
  *
  * @author Marcus Nastasi
  * @version 1.0.1
@@ -14,10 +14,11 @@ public interface CepGateway {
 
     /**
      *
-     * This function should allow to get information by cep.
+     * This function should allow to get information by postal code.
      *
-     * @param cep the cep string
-     * @return return a Cep entity object.
+     * @param cep the postal code string.
+     *
+     * @return return a postal code entity object.
      */
     Cep getCep(String cep);
 }

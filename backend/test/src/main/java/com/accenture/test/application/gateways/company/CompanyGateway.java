@@ -24,6 +24,7 @@ public interface CompanyGateway {
      * @param name the name filter.
      * @param cnpj cnpj filter.
      * @param cep cep filter.
+     *
      * @return return a company list paginated.
      */
     CompanyPag getAll(int page, int size, String name, String cnpj, String cep);
@@ -33,6 +34,7 @@ public interface CompanyGateway {
      * This function should allow to get a single company.
      *
      * @param id the company id.
+     *
      * @return the company entity object.
      */
     Company get(UUID id);
@@ -42,6 +44,7 @@ public interface CompanyGateway {
      * This function should allow to save data on database.
      *
      * @param data the company entity object to be saved.
+     *
      * @return the registre saved.
      */
     Company save(Company data);
@@ -51,6 +54,7 @@ public interface CompanyGateway {
      * This function should allow to delete a company registre on database.
      *
      * @param id the company id.
+     *
      * @return the company deleted.
      */
     Company delete(UUID id);

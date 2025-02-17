@@ -106,7 +106,10 @@ public class CompanyController {
      * @return the company saved.
      */
     @PostMapping(value = "/registrar")
-    @CacheEvict(value = "company", allEntries = true)
+    @CacheEvict(
+        value = "company",
+        allEntries = true
+    )
     @ResponseStatus(HttpStatus.CREATED)
     @Operation(summary = "Register new company", description = "In this route you can register a new company")
     @ApiResponse(responseCode = "201", description = "Returning data from the created company")
@@ -125,11 +128,16 @@ public class CompanyController {
      * @return the company updated.
      */
     @PatchMapping(value = "/atualizar/{id}")
-    @CacheEvict(value = "company", allEntries = true)
+    @CacheEvict(
+        value = "company",
+        allEntries = true
+    )
     @ResponseStatus(HttpStatus.OK)
     @Operation(summary = "Update company data", description = "In this route you can update a company's data")
     @ApiResponse(responseCode = "200", description = "Returning updated company data")
-    public ResponseEntity<CompanyResponseDto> update(@PathVariable("id") UUID id, @RequestBody @Valid CompanyRequestDto data) {
+    public ResponseEntity<CompanyResponseDto> update(
+            @PathVariable("id") UUID id,
+            @RequestBody @Valid CompanyRequestDto data) {
         Company company = companyUseCase.update(id, companyDtoMapper.mapFromRequest(data));
         return ResponseEntity.ok(companyDtoMapper.mapToResponse(company));
     }
@@ -143,7 +151,13 @@ public class CompanyController {
      * @return the company deleted.
      */
     @DeleteMapping(value = "/deletar/{id}")
-    @CacheEvict(value = {"company", "supplier"}, allEntries = true)
+    @CacheEvict(
+        value = {
+            "company",
+            "supplier"
+        },
+        allEntries = true
+    )
     @ResponseStatus(HttpStatus.OK)
     @Operation(summary = "Delete a company", description = "In this route you can delete a company's data")
     @ApiResponse(responseCode = "200", description = "Returning deleted company data")
@@ -162,11 +176,22 @@ public class CompanyController {
      * @return the company associated.
      */
     @PatchMapping(value = "/associar/{id_empresa}/{id_fornecedor}")
-    @CacheEvict(value = {"company", "supplier"}, allEntries = true)
+    @CacheEvict(
+        value = {
+            "company",
+            "supplier"
+        },
+        allEntries = true
+    )
     @ResponseStatus(HttpStatus.OK)
-    @Operation(summary = "Associate company and supplier", description = "In this route you can associate a supplier with a company")
+    @Operation(
+        summary = "Associate company and supplier",
+        description = "In this route you can associate a supplier with a company"
+    )
     @ApiResponse(responseCode = "200", description = "Returning data from a company associated with a new supplier")
-    public ResponseEntity<CompanyResponseDto> associate(@PathVariable("id_empresa") UUID company_id, @PathVariable("id_fornecedor") UUID supplier_id) {
+    public ResponseEntity<CompanyResponseDto> associate(
+            @PathVariable("id_empresa") UUID company_id,
+            @PathVariable("id_fornecedor") UUID supplier_id) {
         Company company = companyUseCase.associateSupplier(supplier_id, company_id);
         return ResponseEntity.ok(companyDtoMapper.mapToResponse(company));
     }
@@ -181,11 +206,22 @@ public class CompanyController {
      * @return the company associated.
      */
     @PatchMapping(value = "/desassociar/{id_empresa}/{id_fornecedor}")
-    @CacheEvict(value = {"company", "supplier"}, allEntries = true)
+    @CacheEvict(
+        value = {
+            "company",
+            "supplier"
+        },
+        allEntries = true
+    )
     @ResponseStatus(HttpStatus.OK)
-    @Operation(summary = "Disassociate company and supplier", description = "In this route you can disassociate a supplier and a company")
+    @Operation(
+        summary = "Disassociate company and supplier",
+        description = "In this route you can disassociate a supplier and a company"
+    )
     @ApiResponse(responseCode = "200", description = "Returning data from a company disconnected from a supplier")
-    public ResponseEntity<CompanyResponseDto> disassociate(@PathVariable("id_empresa") UUID company_id, @PathVariable("id_fornecedor") UUID supplier_id) {
+    public ResponseEntity<CompanyResponseDto> disassociate(
+            @PathVariable("id_empresa") UUID company_id,
+            @PathVariable("id_fornecedor") UUID supplier_id) {
         Company company = companyUseCase.disassociateSupplier(supplier_id, company_id);
         return ResponseEntity.ok(companyDtoMapper.mapToResponse(company));
     }

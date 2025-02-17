@@ -5,7 +5,7 @@ import com.accenture.test.domain.cep.Cep;
 
 /**
  *
- * The Cep use case.
+ * The postal code use case.
  *
  * @author Marcus Nastasi
  * @version 1.0.1
@@ -13,7 +13,7 @@ import com.accenture.test.domain.cep.Cep;
  */
 public class CepUseCase {
 
-    private CepGateway cepGateway;
+    private final CepGateway cepGateway;
 
     public CepUseCase(CepGateway cepGateway) {
         this.cepGateway = cepGateway;
@@ -23,7 +23,8 @@ public class CepUseCase {
      *
      * This function allows to get information by cep.
      *
-     * @param cep the cep string
+     * @param cep the cep string.
+     *
      * @return return a Cep entity object.
      */
     public Cep getCep(String cep) {
