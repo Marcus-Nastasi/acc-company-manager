@@ -11,6 +11,14 @@ import org.springframework.cache.annotation.Cacheable;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+/**
+ *
+ * The postal code controller.
+ *
+ * @author Marcus Nastasi
+ * @version 1.0.1
+ * @since 2024
+ */
 @RestController
 @RequestMapping(value = "/api/cep")
 public class CepController {
@@ -18,10 +26,21 @@ public class CepController {
     @Autowired
     private CepUseCase cepUseCase;
 
+    /**
+     *
+     * This function opens the api to handle postal code requests.
+     *
+     * @param cep the postal code.
+     *
+     * @return the postal code response dto.
+     */
     @GetMapping(value = "/{cep}")
     @Cacheable("cep")
     @ResponseStatus(HttpStatus.OK)
-    @Operation(summary = "Search address data based on zip code", description = "In this route you can consult detailed address data based on a zip code")
+    @Operation(
+        summary = "Search address data based on zip code",
+        description = "In this route you can consult detailed address data based on a zip code"
+    )
     @ApiResponse(responseCode = "200", description = "Returning data from the postal API")
     public CepResponseDto getByCep(@PathVariable("cep") String cep) {
         Cep cr = cepUseCase.getCep(cep);

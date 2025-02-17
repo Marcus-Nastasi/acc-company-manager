@@ -2,6 +2,14 @@ package com.accenture.test.adapter.output.cep;
 
 import java.io.Serializable;
 
+/**
+ *
+ * The postal code dto.
+ *
+ * @author Marcus Nastasi
+ * @version 1.0.1
+ * @since 2024
+ */
 public record CepResponseDto(
         String cep,
         String logradouro,

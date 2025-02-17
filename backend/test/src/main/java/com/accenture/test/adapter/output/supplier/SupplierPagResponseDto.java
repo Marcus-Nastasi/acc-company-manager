@@ -9,6 +9,14 @@ import java.io.Serial;
 import java.io.Serializable;
 import java.util.List;
 
+/**
+ *
+ * The supplier paginated dto.
+ *
+ * @author Marcus Nastasi
+ * @version 1.0.1
+ * @since 2024
+ */
 @Getter
 @Setter
 @AllArgsConstructor
