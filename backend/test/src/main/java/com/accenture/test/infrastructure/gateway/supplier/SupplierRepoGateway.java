@@ -13,6 +13,14 @@ import org.springframework.data.domain.PageRequest;
 
 import java.util.UUID;
 
+/**
+ *
+ * The supplier service implementation.
+ *
+ * @author Marcus Nastasi
+ * @version 1.0.1
+ * @since 2024
+ */
 public class SupplierRepoGateway implements SupplierGateway {
 
     @Autowired
@@ -20,6 +28,17 @@ public class SupplierRepoGateway implements SupplierGateway {
     @Autowired
     private SupplierEntityMapper supplierEntityMapper;
 
+    /**
+     *
+     * This function allows to get all the suppliers paginated and filtered by name and cnpj or cpf.
+     *
+     * @param page the pagination page.
+     * @param size the size of search.
+     * @param nome the name filter.
+     * @param cnpj_cpf the CNPJ or CPF.
+     *
+     * @return a supplier paginated object.
+     */
     @Override
     public SupplierPag getAll(int page, int size, String nome, String cnpj_cpf) {
         Page<SupplierEntity> entityPage = supplierRepo.filter(nome, cnpj_cpf, PageRequest.of(page, size));
@@ -31,16 +50,40 @@ public class SupplierRepoGateway implements SupplierGateway {
         );
     }
 
+    /**
+     *
+     * This function allows to get one supplier by its id.
+     *
+     * @param id the supplier id.
+     *
+     * @return the supplier object.
+     */
     @Override
     public Supplier get(UUID id) {
         return supplierEntityMapper.mapFromEntity(supplierRepo.findById(id).orElseThrow(() -> new InfraException("Not able to get supplier")));
     }
 
+    /**
+     *
+     * This function allows to save a supplier.
+     *
+     * @param supplier the supplier entity object to be saved.
+     *
+     * @return the supplier saved.
+     */
     @Override
     public Supplier save(Supplier supplier) {
         return supplierEntityMapper.mapFromEntity(supplierRepo.save(supplierEntityMapper.mapFromSupplierToEntity(supplier)));
     }
 
+    /**
+     *
+     * This function allows to delete a supplier.
+     *
+     * @param id the supplier id.
+     *
+     * @return the supplier deleted.
+     */
     @Override
     public Supplier delete(UUID id) {
         Supplier supplierCompanies = get(id);

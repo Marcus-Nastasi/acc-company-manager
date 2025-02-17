@@ -17,6 +17,14 @@ import java.util.ArrayList;
  */
 public class SupplierEntityMapper {
 
+    /**
+     *
+     * Map from supplier JPA entity to supplier domain object.
+     *
+     * @param supplier the entity object.
+     *
+     * @return the domain object.
+     */
     public Supplier mapFromEntity(SupplierEntity supplier) {
         return new Supplier(
             supplier.getId(),
@@ -31,6 +39,14 @@ public class SupplierEntityMapper {
         );
     }
 
+    /**
+     *
+     * Map from supplier domain object to supplier JPA entity.
+     *
+     * @param supplier the domain object.
+     *
+     * @return the entity object.
+     */
     public SupplierEntity mapFromSupplierToEntity(Supplier supplier) {
         return new SupplierEntity(
             supplier.getId(),
@@ -45,6 +61,14 @@ public class SupplierEntityMapper {
         );
     }
 
+    /**
+     *
+     * Map to company entity without suppliers.
+     *
+     * @param company the company domain object.
+     *
+     * @return the company entity object.
+     */
     private CompanyEntity mapCompanyEntityWithoutSuppliers(Company company) {
         return new CompanyEntity(
             company.getId(),
@@ -55,6 +79,14 @@ public class SupplierEntityMapper {
         );
     }
 
+    /**
+     *
+     * Map to company domain without suppliers.
+     *
+     * @param company the company entity object.
+     *
+     * @return the company domain object.
+     */
     private Company mapCompanyWithoutSuppliers(CompanyEntity company) {
         return new Company(
             company.getId(),

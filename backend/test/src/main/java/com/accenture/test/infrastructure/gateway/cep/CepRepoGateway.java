@@ -6,10 +6,26 @@ import com.accenture.test.infrastructure.exception.InfraException;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.reactive.function.client.WebClient;
 
+/**
+ *
+ * The Cep service implementation.
+ *
+ * @author Marcus Nastasi
+ * @version 1.0.1
+ * @since 2024
+ */
 public class CepRepoGateway implements CepGateway {
 
     private final WebClient webClient = WebClient.create();
 
+    /**
+     *
+     * This function allows to retrieve data from a location, by postal code.
+     *
+     * @param cep the cep string.
+     *
+     * @return the location info in a Cep entity model.
+     */
     @Override
     public Cep getCep(String cep) {
         try {

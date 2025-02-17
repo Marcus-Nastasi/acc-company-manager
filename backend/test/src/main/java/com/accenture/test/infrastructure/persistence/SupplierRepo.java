@@ -21,6 +21,16 @@ import java.util.UUID;
 @Repository
 public interface SupplierRepo extends JpaRepository<SupplierEntity, UUID> {
 
+    /**
+     *
+     * This query allows to retrieve supplier entity objects paginated and filtered.
+     *
+     * @param name the name filter.
+     * @param cnpj_cpf cnjp or cpf filter.
+     * @param pageable the pageable object.
+     *
+     * @return A page of supplier entities.
+     */
     @Query(nativeQuery = true, value = "SELECT s.* FROM supplier s " +
             "WHERE (:name IS NULL OR LOWER(s.name) LIKE LOWER(CONCAT('%', :name, '%'))) " +
             "AND (:cnpj_cpf IS NULL OR s.cnpj_cpf LIKE CONCAT('%', :cnpj_cpf, '%'));")

@@ -21,6 +21,17 @@ import java.util.UUID;
 @Repository
 public interface CompanyRepo extends JpaRepository<CompanyEntity, UUID> {
 
+    /**
+     *
+     * This query allows to retrieve company entity objects paginated and filtered.
+     *
+     * @param name the name filter.
+     * @param cnpj cnjp filter.
+     * @param cep the postal code filter.
+     * @param pageable the pageable object.
+     *
+     * @return A page of company entities.
+     */
     @Query(nativeQuery = true, value = "SELECT c.* FROM company c " +
             "WHERE(:name IS NULL OR LOWER(c.name) LIKE LOWER(CONCAT('%', :name, '%'))) " +
             "AND (:cnpj IS NULL OR c.cnpj LIKE CONCAT('%', :cnpj, '%')) " +
